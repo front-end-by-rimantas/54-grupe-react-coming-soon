@@ -1,24 +1,14 @@
 import './clock.css';
+import { Time } from './Time';
 
 export function Clock() {
+    const timerNumbers = [432, 9, 37, 39];
+    const timerTexts = ['Days', 'Hours', 'Minutes', 'Seconds'];
+
     return (
         <div className="clock">
-            <div className="time">
-                <div className="value">432</div>
-                <div className="label">Days</div>
-            </div>
-            <div className="time">
-                <div className="value">09</div>
-                <div className="label">Hours</div>
-            </div>
-            <div className="time">
-                <div className="value">37</div>
-                <div className="label">Minutes</div>
-            </div>
-            <div className="time">
-                <div className="value">39</div>
-                <div className="label">Seconds</div>
-            </div>
+            {timerNumbers.map((value, i) =>
+                <Time key={timerTexts[i]} value={value} label={timerTexts[i]} />)}
         </div>
     );
 }
