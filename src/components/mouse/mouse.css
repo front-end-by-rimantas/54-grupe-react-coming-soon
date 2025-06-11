@@ -1,0 +1,47 @@
+.mouse {
+  /* 1em = sito elemento font-size */
+  font-size: 1.5rem;
+  width: 1.2em;
+  height: 1.9em;
+  border: 0.15em solid #fff;
+  border-radius: 0.6em;
+  align-self: center;
+}
+
+.mouse::before {
+  content: '';
+  display: block;
+  font-size: inherit;
+  /* width: 0.15em; */
+  width: 0.4em;
+  height: 0.4em;
+  margin-top: 0.3em;
+  margin-left: 0.255em;
+  background-color: #fff;
+  border-radius: 0.2em;
+  animation-name: scroll;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  background-image: url(/img/mouse.png);
+  background-size: contain;
+}
+.mouse:hover::before {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    margin-top: 0.3em;
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 1em;
+    transform: rotate(3600deg);
+    opacity: 0;
+  }
+}
